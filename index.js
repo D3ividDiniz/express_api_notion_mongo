@@ -2,7 +2,6 @@
 const express = require('express'),
       mongoose = require('mongoose'),
       corsOptions = require('./config/cors.config'),
-      bodyParser = require('body-parser'),
       app = express(),
       cors = require('cors'),
       port = 3000,
@@ -13,7 +12,7 @@ app.use(express.json());
 app.use('/notes',cors(corsOptions), notesRoute);
       
 app.get('', (req,res)=>{
-    res.send('teste');
+    res.json({message:"Welcome to my app! "});
 })
 
 mongoose
